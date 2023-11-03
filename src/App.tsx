@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useMantineTheme, Button } from '@mantine/core'
 import '@mantine/core/styles.css';
 import './App.css';
 
 function App() {
   const theme = useMantineTheme()
+  const [buttonKey, setButtonKey] = useState(0)
+  const buttonContet = ['Test', 'Working!', 'Reset']
   return (
     <div className='full-height center'>
       <div>
-        <Button>Test</Button>
+        <Button onClick={()=>{setButtonKey(buttonKey >= buttonContet.length - 1 ? 0 : buttonKey + 1)}}>{buttonContet[buttonKey]}</Button>
       </div>
     </div>
   );
