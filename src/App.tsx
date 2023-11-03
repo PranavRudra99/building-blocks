@@ -1,12 +1,15 @@
 import React from 'react';
-import { Button, useMantineTheme } from '@mantine/core'
+import { useMantineTheme, Button } from '@mantine/core'
+import '@mantine/core/styles.css';
 import './App.css';
 
 function App() {
   const theme = useMantineTheme()
   return (
-    <div className="App">
-      <Button color={theme.primaryColor}>TEST!</Button>
+    <div className='full-height center'>
+      <div>
+        <Button>Test</Button>
+      </div>
     </div>
   );
 }
