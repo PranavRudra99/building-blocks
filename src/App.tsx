@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { useMantineTheme, Button } from '@mantine/core'
+import '@mantine/core/styles.css';
 import './App.css';
 
 function App() {
+  const theme = useMantineTheme()
+  const [buttonKey, setButtonKey] = useState(0)
+  const buttonContet = ['Test', 'Working!', 'Reset']
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='full-height center'>
+      <div>
+        <Button onClick={()=>{setButtonKey(buttonKey >= buttonContet.length - 1 ? 0 : buttonKey + 1)}}>{buttonContet[buttonKey]}</Button>
+      </div>
     </div>
   );
 }
