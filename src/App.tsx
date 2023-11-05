@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useMantineTheme, Button } from '@mantine/core'
+import { Button } from '@mantine/core'
 import '@mantine/core/styles.css';
 import './App.css';
 
 function App() {
-  const theme = useMantineTheme()
   const [buttonKey, setButtonKey] = useState(0)
   const buttonContet = ['Test', 'Working!', 'Reset']
   return (
