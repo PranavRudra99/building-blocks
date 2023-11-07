@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import { Button } from '@mantine/core'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import '@mantine/core/styles.css';
 import './scss/main.scss';
+import Demo from './demo/Demo';
 
 function App() {
-  const [buttonKey, setButtonKey] = useState(0)
-  const buttonContet = ['Test', 'Working!', 'Reset']
   return (
-    <div className='full-height center'>
-      <div>
-        <Button onClick={() => { setButtonKey(buttonKey >= buttonContet.length - 1 ? 0 : buttonKey + 1) }}>{buttonContet[buttonKey]}</Button>
-      </div>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/demo' element={<Demo />}></Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
