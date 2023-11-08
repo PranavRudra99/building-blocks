@@ -10,9 +10,9 @@ const Login = (): JSX.Element => {
     const {
         register,
         handleSubmit,
-      } = useForm<LoginInputs>()
+    } = useForm<LoginInputs>()
 
-    const handleLogin: SubmitHandler<LoginInputs> = (data) => {console.log(data)}
+    const handleLogin: SubmitHandler<LoginInputs> = (data) => { console.log(data) }
 
     return (
         <div className='full-height center'>
@@ -20,12 +20,12 @@ const Login = (): JSX.Element => {
                 <Grid className='pl-1 pr-1'>
                     <Grid.Col>
                         <Input.Wrapper label='Username'>
-                            <Input placeholder='Enter user name' {...register('username', {required: true})}></Input>
+                            <Input placeholder='Enter user name' {...register('username', { required: true })}></Input>
                         </Input.Wrapper>
                     </Grid.Col>
                     <Grid.Col>
                         <Input.Wrapper label='Password'>
-                            <Input type='password' placeholder='Enter password' {...register('password', {required: true})}></Input>
+                            <Input type='password' placeholder='Enter password' {...register('password', { required: true })}></Input>
                         </Input.Wrapper>
                     </Grid.Col>
                     <Grid.Col className='center mt-1'>
