@@ -1,5 +1,5 @@
 import { Button, Input, Grid } from '@mantine/core'
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 type LoginInputs = {
     username: string
