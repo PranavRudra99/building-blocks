@@ -1,5 +1,6 @@
 import { Button, Input, Grid } from '@mantine/core'
 import { useForm, SubmitHandler } from "react-hook-form"
+import Navigation from '../navigation'
 
 type LoginInputs = {
     username: string
@@ -15,24 +16,27 @@ const Login = (): JSX.Element => {
     const handleLogin: SubmitHandler<LoginInputs> = (data) => { console.log(data) }
 
     return (
-        <div className='full-height center'>
-            <form onSubmit={handleSubmit(handleLogin)}>
-                <Grid className='pl-1 pr-1'>
-                    <Grid.Col>
-                        <Input.Wrapper label='Username'>
-                            <Input placeholder='Enter user name' {...register('username', { required: true })}></Input>
-                        </Input.Wrapper>
-                    </Grid.Col>
-                    <Grid.Col>
-                        <Input.Wrapper label='Password'>
-                            <Input type='password' placeholder='Enter password' {...register('password', { required: true })}></Input>
-                        </Input.Wrapper>
-                    </Grid.Col>
-                    <Grid.Col className='center mt-1'>
-                        <Button fullWidth type='submit'>Submit</Button>
-                    </Grid.Col>
-                </Grid>
-            </form>
+        <div>
+            <Navigation></Navigation>
+            <div className='center'>
+                <form onSubmit={handleSubmit(handleLogin)}>
+                    <Grid className='pl-1 pr-1'>
+                        <Grid.Col>
+                            <Input.Wrapper label='Username'>
+                                <Input placeholder='Enter user name' {...register('username', { required: true })}></Input>
+                            </Input.Wrapper>
+                        </Grid.Col>
+                        <Grid.Col>
+                            <Input.Wrapper label='Password'>
+                                <Input type='password' placeholder='Enter password' {...register('password', { required: true })}></Input>
+                            </Input.Wrapper>
+                        </Grid.Col>
+                        <Grid.Col className='center mt-1'>
+                            <Button fullWidth type='submit'>Submit</Button>
+                        </Grid.Col>
+                    </Grid>
+                </form>
+            </div>
         </div>
     )
 }
