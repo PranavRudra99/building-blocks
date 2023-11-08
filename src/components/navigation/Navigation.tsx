@@ -14,7 +14,7 @@ const Navigation = (): JSX.Element => {
             <Menu.Dropdown>
                 {paths.map((path)=>{
                     return (
-                        <Menu.Item leftSection={<path.icon />} onClick={()=>{toggle(); navigate(path.path)}}>{path.label}</Menu.Item>
+                        <Menu.Item key={path.label} leftSection={<path.icon />} onClick={()=>{toggle(); navigate(path.path)}}>{path.label}</Menu.Item>
                     )
                 })}
             </Menu.Dropdown>
