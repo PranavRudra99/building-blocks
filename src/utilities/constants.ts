@@ -5,15 +5,19 @@ import { IconLogin, IconAnalyze } from '@tabler/icons-react';
 
 export const paths: Paths[] = [
     {
-        path: '/demo',
+        endpoint: '/demo',
         component: Demo,
         label: 'Demo',
-        icon: IconAnalyze
+        icon: IconAnalyze,
+        header: 'Test Header',
+        footer: 'Test Footer'
     },
     {
-        path: '/login',
+        endpoint: '/login',
         component: Login,
         label: 'Login',
-        icon: IconLogin
+        icon: IconLogin,
+        header: 'Sign in',
+        footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
 ]

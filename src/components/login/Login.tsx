@@ -1,5 +1,5 @@
 import { Button, Input, Grid } from '@mantine/core'
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 type LoginInputs = {
     username: string
@@ -20,7 +20,7 @@ const Login = (): JSX.Element => {
     }
 
     return (
-        <div className='vh-60 center'>
+        <div className='mt-16 center'>
             <form onSubmit={handleSubmit(handleLogin)}>
                 <Grid className='pl-1 pr-1'>
                     <Grid.Col>
