@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalContextProvider>
-        <div className='full-height'>
+        <div className='full-height d-flex flex-col'>
           <HeaderContainer />
           <Routes>
             {paths.map((path) => {
