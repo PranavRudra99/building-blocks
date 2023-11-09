@@ -11,7 +11,10 @@ export const GlobalContext = createContext<GlobalContextInterface>({
 
 const GlobalContextProvider = ({children}: ContextProviderInterface): JSX.Element => {
     const location = useLocation()
-    const route = location.pathname
+    let route = location.pathname
+    if(route === '/'){
+        route = '/login' //redirect to login
+    }
     const [selectedPage, setSelectedPage] = useState<number>(findSelectedIndex(route))
     return (
         <GlobalContext.Provider
