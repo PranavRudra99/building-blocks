@@ -4,6 +4,7 @@ import { paths } from '../../utilities/constants'
 import { useNavigate } from 'react-router'
 import { useContext } from 'react'
 import { GlobalContext } from '../../contexts/GlobalContext'
+import { findSelectedIndex } from '../../utilities/utils'
 
 const Navigation = (): JSX.Element => {
     const [opened, { toggle }] = useDisclosure()
@@ -11,9 +12,7 @@ const Navigation = (): JSX.Element => {
     const { setSelectedPage } = useContext(GlobalContext)
     const handleClick = (url: string) => {
         toggle();
-        setSelectedPage(paths.findIndex((path) => {
-            return path.endpoint === url
-        }))
+        setSelectedPage(findSelectedIndex(url))
         navigate(url)
     }
 

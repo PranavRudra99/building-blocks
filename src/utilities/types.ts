@@ -4,7 +4,8 @@ export interface Paths {
     endpoint: string,
     component: () => JSX.Element,
     label: string,
-    header: string
+    header: string,
+    footer: string,
     icon: (props: any) => JSX.Element
 }
 

@@ -9,13 +9,15 @@ export const paths: Paths[] = [
         component: Demo,
         label: 'Demo',
         icon: IconAnalyze,
-        header: 'Test Page'
+        header: 'Test Header',
+        footer: 'Test Footer'
     },
     {
         endpoint: '/login',
         component: Login,
         label: 'Login',
         icon: IconLogin,
-        header: 'Sign in'
+        header: 'Sign in',
+        footer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
 ]

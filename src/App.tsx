@@ -10,15 +10,17 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalContextProvider>
-        <HeaderContainer />
-        <Routes>
-          {paths.map((path) => {
-            return <Route key={path.label} path={path.endpoint} element={<path.component />}></Route>
-          }
-          )}
-          <Route path='*' element={<Navigate to={'/login'} />}></Route>
-        </Routes>
-        <Footer />
+        <div className='full-height'>
+          <HeaderContainer />
+          <Routes>
+            {paths.map((path) => {
+              return <Route key={path.label} path={path.endpoint} element={<path.component />}></Route>
+            }
+            )}
+            <Route path='*' element={<Navigate to={'/login'} />}></Route>
+          </Routes>
+          <Footer />
+        </div>
       </GlobalContextProvider>
     </BrowserRouter>
   )

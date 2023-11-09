@@ -1,6 +1,8 @@
 import { noop } from "@babel/types";
 import { ContextProviderInterface, GlobalContextInterface } from "../utilities/types";
 import { createContext, useState } from 'react';
+import { useLocation } from 'react-router-dom'
+import { findSelectedIndex } from "../utilities/utils";
 
 export const GlobalContext = createContext<GlobalContextInterface>({
     selectedPage: -1,
@@ -8,7 +10,9 @@ export const GlobalContext = createContext<GlobalContextInterface>({
 })
 
 const GlobalContextProvider = ({children}: ContextProviderInterface): JSX.Element => {
-    const [selectedPage, setSelectedPage] = useState<number>(1)
+    const location = useLocation()
+    const route = location.pathname
+    const [selectedPage, setSelectedPage] = useState<number>(findSelectedIndex(route))
     return (
         <GlobalContext.Provider
             value={{
