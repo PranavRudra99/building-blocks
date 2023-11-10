@@ -12,13 +12,15 @@ function App() {
       <GlobalContextProvider>
         <div className='full-height d-flex flex-col'>
           <HeaderContainer />
-          <Routes>
-            {paths.map((path) => {
-              return <Route key={path.label} path={path.endpoint} element={<path.component />}></Route>
-            }
-            )}
-            <Route path='*' element={<Navigate to={'/login'} />}></Route>
-          </Routes>
+          <div className='mt-16 center'>
+            <Routes>
+              {paths.map((path) => {
+                return <Route key={path.label} path={path.endpoint} element={<path.component />}></Route>
+              }
+              )}
+              <Route path='*' element={<Navigate to={'/login'} />}></Route>
+            </Routes>
+          </div>
           <Footer />
         </div>
       </GlobalContextProvider>

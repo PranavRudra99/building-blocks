@@ -1,9 +1,18 @@
 import Demo from "../pages/demo";
 import Login from "../pages/login";
+import Register from "../pages/registration";
 import { Paths } from "./types";
-import { IconLogin, IconAnalyze } from '@tabler/icons-react';
+import { IconLogin, IconAnalyze, IconUserPlus } from '@tabler/icons-react';
 
 export const paths: Paths[] = [
+    {
+        endpoint: '/register',
+        component: Register,
+        label: 'Registration',
+        icon: IconUserPlus,
+        header: 'Sign up',
+        footer: 'Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Nisi lacus sed viverra tellus in hac habitasse platea.'
+    },
     {
         endpoint: '/demo',
         component: Demo,

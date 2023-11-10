@@ -13,32 +13,30 @@ const Login = (): JSX.Element => {
         setValue
     } = useForm<LoginInputs>()
 
-    const handleLogin: SubmitHandler<LoginInputs> = (data) => { 
+    const handleLogin: SubmitHandler<LoginInputs> = (data) => {
         console.log(data)
         setValue('username', '')
         setValue('password', '')
     }
 
     return (
-        <div className='mt-16 center'>
-            <form onSubmit={handleSubmit(handleLogin)}>
-                <Grid className='pl-1 pr-1'>
-                    <Grid.Col>
-                        <Input.Wrapper label='Username'>
-                            <Input placeholder='Enter user name' {...register('username', { required: true })}></Input>
-                        </Input.Wrapper>
-                    </Grid.Col>
-                    <Grid.Col>
-                        <Input.Wrapper label='Password'>
-                            <Input type='password' placeholder='Enter password' {...register('password', { required: true })}></Input>
-                        </Input.Wrapper>
-                    </Grid.Col>
-                    <Grid.Col className='center mt-1'>
-                        <Button fullWidth type='submit'>Submit</Button>
-                    </Grid.Col>
-                </Grid>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit(handleLogin)}>
+            <Grid className='pl-1 pr-1'>
+                <Grid.Col>
+                    <Input.Wrapper label='Username'>
+                        <Input placeholder='Enter user name' {...register('username', { required: true })}></Input>
+                    </Input.Wrapper>
+                </Grid.Col>
+                <Grid.Col>
+                    <Input.Wrapper label='Password'>
+                        <Input type='password' placeholder='Enter password' {...register('password', { required: true })}></Input>
+                    </Input.Wrapper>
+                </Grid.Col>
+                <Grid.Col className='center mt-1'>
+                    <Button fullWidth type='submit'>Submit</Button>
+                </Grid.Col>
+            </Grid>
+        </form>
     )
 }
 

@@ -5,10 +5,8 @@ const Demo = (): JSX.Element => {
     const [buttonKey, setButtonKey] = useState(0)
     const buttonContet = ['Test', 'Working!', 'Reset']
     return (
-        <div className='mt-16 center'>
-            <div>
-                <Button onClick={() => { setButtonKey(buttonKey >= buttonContet.length - 1 ? 0 : buttonKey + 1) }}>{buttonContet[buttonKey]}</Button>
-            </div>
+        <div>
+            <Button onClick={() => { setButtonKey(buttonKey >= buttonContet.length - 1 ? 0 : buttonKey + 1) }}>{buttonContet[buttonKey]}</Button>
         </div>
     )
 }
