@@ -1,5 +1,5 @@
-import Demo from "../components/demo";
-import Login from "../components/login";
+import Demo from "../pages/demo";
+import Login from "../pages/login";
 import { Paths } from "./types";
 import { IconLogin, IconAnalyze } from '@tabler/icons-react';
 
